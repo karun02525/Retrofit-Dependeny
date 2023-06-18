@@ -5,6 +5,7 @@ import com.swipeapp.domain.model.ProductModel
 import com.swipeapp.network.response.Either
 import com.swipeapp.network.response.map
 import com.swipeapp.network.service.ProductNetworkService
+import java.io.InputStream
 
 
 class ProductRepositoryImpl(
@@ -17,5 +18,21 @@ class ProductRepositoryImpl(
         } catch (error: Throwable) {
             Either.failure(error)
         }
+    }
+
+    override suspend fun addProducts(
+        product_name: String,
+        product_type: String,
+        product_price: String,
+        product_tax: String,
+        inputStream: InputStream?
+    ): Either<Boolean> {
+        return productNetworkService.addProducts(
+            product_name,
+            product_type,
+            product_price,
+            product_tax,
+            inputStream
+        )
     }
 }

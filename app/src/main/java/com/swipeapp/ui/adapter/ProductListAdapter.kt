@@ -18,21 +18,21 @@ class ProductListAdapter (var list: List<ProductModel>) : RecyclerView.Adapter<P
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(list[position])
     }
-
     inner class ViewHolder(private val binding: ItemLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bindItems(model: ProductModel) {
             with(model) {
                 if (model.image == "") {
-                    binding.itemImg.setImageResource(R.drawable.ic_launcher_background)
+                    binding.itemImg.setImageResource(R.drawable.no_image)
                 } else {
                     Picasso.get().load(model.image).into(binding.itemImg)
                 }
                 binding.itemTitle.text=productName
                 binding.itemType.text=productType
                 binding.itemPrice.text=price
-                binding.itemTex.text=tax
+                binding.itemTax.text=tax
             }
         }
     }
+
 
 }

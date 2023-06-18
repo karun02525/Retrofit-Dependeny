@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Swipe App</string>
+    <string name="hint_search">Search Product...</string>
+
+    <string name="item_name_req">Product Name <font color='#FF0000'>*</font></string>
+    <string name="item_type_req">Product Type <font color='#FF0000'>*</font></string>
+    <string name="item_price_req">Price <font color='#FF0000'>*</font></string>
+    <string name="item_tax_req">Tax <font color='#FF0000'>*</font></string>
+    <string name="save_action">Save</string>
+    <string name="currency_symbol">₹</string>
+
 </resources>

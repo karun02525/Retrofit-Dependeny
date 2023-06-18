@@ -10,6 +10,6 @@ import org.koin.dsl.module
 
 val productDomainModule = module {
 
-    single<ProductUseCase> { ProductUseCaseImp(get()) }
+    single<ProductUseCase> { ProductUseCaseImp(get(),get()) }
     single<ProductRepository> { ProductRepositoryImpl(get(),get()) }
 }
